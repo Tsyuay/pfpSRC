@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>FAQ of Monster World: Back to the Gardens</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="faq-css/common.min.css" />                    
+<script type="text/javascript" src="faq-js/common.min.js"></script>            
+<script type="text/javascript" src="faq-js/ga.min.js"></script>
+<script type="text/javascript" src="faq-js/jquery-1.7.min.js"> </script>
+<style type="text/css">
+body,html {
+	background: #fff;
+	overflow-x:hidden;
+	-ms-overflow-x: hidden;
+}
+a {
+	font-size: 12px;
+	color: #013476;
+	text-decoration:none;
+	font-weight: bold;
+}
+a:link {
+	color: #013476;
+	text-decoration:underline;
+}
+
+a:hover {
+	color: #5FB3D8;
+	text-decoration:none;
+}
+a:active {
+	color: #5FB3D8;
+	text-decoration:none;
+}
+a:visited {
+	color: #013476;
+	text-decoration:none;
+}
+
+</style>
+</head>
+<body>
+<div id="page">
+
+	<div id="faqBanner"></div>
+	<div class="content">
+		
+		<div id="faq-content">  </div>	
+		<p> </p>
+		<p> </p>    	
+		
+	</div>
+</div>
+    
+    <script type="text/javascript">    
+		function toggleFaq(obj) {	
+			$(obj).children().slideToggle("fast");							
+		}
+		
+		var jsonFaq = {"faq": [
+		   {"title": "Can I donate or give a tip?", "content": "Thanks for the support! But unfortunately, to respect the original IP and its owners, we don't accept donations. Sorry!"},
+		   {"title": "What are helpers? Can I choose to not have one?", "content": "Helpers are an essential part of the game introduced in level 6. You have to choose a friend you added in GameJolt and click the Contract button. You can change your helper's gender with the Gender button, and change it via the Change button. The helpers will water the garden for you for a few hours according to the food you select. You can't choose to not have one as it's important to have at least one friend added. If you don't feed them, your plants will die because of lack of water."},
+		   {"title": "What is the Strike symbol on the screen? How do I get rid of it?", "content": "The strike symbol indicates your monsters aren't happy because you exceeded the max amount of plots you can have according to your Heart Points. You can get rid of it purchasing more decorations."},
+		   {"title": "Who is Robert? Why he wants my plants?", "content": "Robert is our silly robot who purchases your plants for coins in the (sometimes) double of the price they cost on the market. You can't skip an offer so you need to wait the according time until he goes away."},
+		   {"title": "Why I can't send gifts yet or expand my garden?", "content": "Both gifting and expanding systems were delayed due to time reasons and will be added on a patch of the game, Sorry for the inconvenience! Please be aware that this project is managed by a student who develops the game in its free time."},
+		   {"title": "Who is the baby monster? How can I get him on my garden?", "content": "The baby monster will be your little friend that you will need to care of when he arrives. To get him on your garden, collect or buy the required materials to build the crib and place it with the Build button. He will give you a daily bonus that you will be able to claim only when your baby is happy, and you can give him a name too!"},
+		   {"title": "Why my game gets stuck when I log in?", "content": "If you log in and your game gets stuck on a specific part, it might be because the API we use (GameJolt API) is running slow at the moment. This is an issue that is out of our control, so all we can suggest is to wait or refresh the page."},
+		   {"title": "I can't play the game and a red error box appears", "content": "If a red error box that says this: A crash or error happened in the game. Please report this and it will be fixed soon as possible."},
+		   {"title": "Is the game in Android and IOS devices?", "content": "Of course! We have a special build published for the android and IOS devices, which is directly the game embedded with nothing else."},
+		   {"title": "Why the game isn't on a known platform such as Play Store, App Store, Steam or Facebook?", "content": "The game isn't on an another platform than in GameJolt because that would require actual expensive servers to pay, maintenance, verifications from other people, and more. So we choosed GameJolt because of its powerful API and less restrictions in game publishing."}
+		]};
+		
+		var htmlContent = '';		
+		$.each(jsonFaq.faq, function(i, item) {			
+			htmlContent += '<div class=\'faqTitle interactive\' onclick=\'toggleFaq(this);\'>' + eval(i+1) + '. '  + item.title
+						+ '<p id=\'\' style=\'display:none;\' class=\'faqContent interactive\'>'+ item.content + '</p>'
+						+ '</div>';
+						
+			$('#faq-content').html(htmlContent);
+		});
+	</script>
+</body>
+</html>
